@@ -1,0 +1,757 @@
+{
+    "nodes": [
+        {
+            "name": "Incorrect Z-Offset (Too Low)",
+            "type": "FailureMode",
+            "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+        },
+        {
+            "name": "First Layer Transparent/Thin",
+            "type": "Observation",
+            "description": "The initial layer of the print is see-through or significantly thinner than expected due to excessive squish."
+        },
+        {
+            "name": "Extrusion Too Wide",
+            "type": "Observation",
+            "description": "Deposited plastic lines on the first layer are significantly wider than the configured extrusion width, spreading out excessively."
+        },
+        {
+            "name": "Nozzle Scratching Sound",
+            "type": "Observation",
+            "description": "An audible scratching noise occurs as the nozzle travels across the print bed or previous layers, indicating it is too close."
+        },
+        {
+            "name": "Nozzle Blockage (Partial)",
+            "type": "FailureMode",
+            "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+        },
+        {
+            "name": "Poor Inter-Layer Adhesion/Gaps",
+            "type": "Observation",
+            "description": "Layers above the first do not bond well together, potentially showing gaps between them or being easily separated."
+        },
+        {
+            "name": "No Extrusion",
+            "type": "Observation",
+            "description": "No filament is extruded from the nozzle despite the extruder motor attempting to push filament."
+        },
+        {
+            "name": "Nozzle Blockage (Complete)",
+            "type": "FailureMode",
+            "description": "Flow of filament through the nozzle is entirely prevented."
+        },
+        {
+            "name": "Curved/Inconsistent Extrusion",
+            "type": "Observation",
+            "description": "Filament extruded freely in mid-air comes out crooked, curled, or unevenly instead of falling straight down, often indicating a partial blockage."
+        },
+        {
+            "name": "Extruded Diameter Mismatch",
+            "type": "Observation",
+            "description": "The diameter of the filament extruded in mid-air appears inconsistent or does not match the expected nozzle diameter."
+        },
+        {
+            "name": "Extruder Clicking/Skipping",
+            "type": "Observation",
+            "description": "Audible clicking or thumping sounds from the extruder motor, indicating it is struggling and failing to push filament consistently, often due to excessive resistance."
+        },
+        {
+            "name": "Incorrect Z-Offset (Too High)",
+            "type": "FailureMode",
+            "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+        },
+        {
+            "name": "First Layer Rounded/Rope-like",
+            "type": "Observation",
+            "description": "The initial layer's extruded lines are rounded on top, resembling ropes, instead of being squished flat against the bed."
+        },
+        {
+            "name": "Poor Bed Adhesion",
+            "type": "Observation",
+            "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+        },
+        {
+            "name": "Gaps Between First Layer Lines",
+            "type": "Observation",
+            "description": "Noticeable spaces exist between adjacent lines on the first layer because they are not squished together sufficiently."
+        },
+        {
+            "name": "Printed Lines Thin (Insufficient Squish)",
+            "type": "Observation",
+            "description": "Extruded lines appear narrow or do not merge properly side-by-side due to insufficient squish from the nozzle being too far."
+        },
+        {
+            "name": "Print Warping/Detaching",
+            "type": "Observation",
+            "description": "The print lifts off the print bed at the corners or edges, or detaches completely during the printing process, often due to poor first layer adhesion or thermal stress."
+        },
+        {
+            "name": "Contaminated Print Surface",
+            "type": "FailureMode",
+            "description": "The print bed surface is dirty (e.g., dust, oil, fingerprints), preventing proper filament adhesion."
+        },
+        {
+            "name": "Incorrect Bed Leveling",
+            "type": "FailureMode",
+            "description": "The print bed is not uniformly level or trammed relative to the nozzle's travel plane, causing inconsistent first layer height."
+        },
+        {
+            "name": "Incorrect Bed Temperature",
+            "type": "FailureMode",
+            "description": "The print bed temperature is set incorrectly (too low or too high) for the specific filament type, negatively affecting first layer adhesion."
+        },
+        {
+            "name": "Bed Temperature",
+            "type": "SensorReading",
+            "description": "Measured temperature of the print bed surface."
+        },
+        {
+            "name": "Extruder Mechanical Failure",
+            "type": "FailureMode",
+            "description": "A malfunction within the extruder mechanism (e.g., worn or damaged gear, incorrect idler tension, stepper motor fault) preventing consistent filament feeding, potentially causing clicking or skipping sounds."
+        },
+        {
+            "name": "Heat Creep",
+            "type": "FailureMode",
+            "description": "Filament softening or melting prematurely in the cold end or heat break due to excessive heat transfer from the hot end, causing jams, difficult extrusion, or partial blockages."
+        },
+        {
+            "name": "Incorrect Filament Diameter",
+            "type": "FailureMode",
+            "description": "The filament being used has a diameter that is inconsistent or significantly deviates from the expected standard (e.g., 1.75mm, 2.85mm), causing feeding issues, jams, or inconsistent extrusion."
+        },
+        {
+            "name": "Worn Nozzle",
+            "type": "FailureMode",
+            "description": "The nozzle orifice has become enlarged or deformed through use, leading to inconsistent extrusion width, poor print quality, stringing, or symptoms resembling partial blockage."
+        },
+        {
+            "name": "Incorrect Extrusion Multiplier/Flow Rate",
+            "type": "FailureMode",
+            "description": "The slicer setting controlling the overall amount of plastic extruded is miscalibrated (too high or too low), leading to symptoms like over-extrusion (transparent/thin first layer, wide lines) or under-extrusion (gaps, thin lines, poor adhesion)."
+        }
+    ],
+    "relationships": [
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "target": {
+                "name": "First Layer Transparent/Thin",
+                "type": "Observation",
+                "description": "The initial layer of the print is see-through or significantly thinner than expected due to excessive squish."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "target": {
+                "name": "Extrusion Too Wide",
+                "type": "Observation",
+                "description": "Deposited plastic lines on the first layer are significantly wider than the configured extrusion width, spreading out excessively."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "target": {
+                "name": "Nozzle Scratching Sound",
+                "type": "Observation",
+                "description": "An audible scratching noise occurs as the nozzle travels across the print bed or previous layers, indicating it is too close."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "target": {
+                "name": "Poor Inter-Layer Adhesion/Gaps",
+                "type": "Observation",
+                "description": "Layers above the first do not bond well together, potentially showing gaps between them or being easily separated."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "target": {
+                "name": "No Extrusion",
+                "type": "Observation",
+                "description": "No filament is extruded from the nozzle despite the extruder motor attempting to push filament."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "target": {
+                "name": "Curved/Inconsistent Extrusion",
+                "type": "Observation",
+                "description": "Filament extruded freely in mid-air comes out crooked, curled, or unevenly instead of falling straight down, often indicating a partial blockage."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "target": {
+                "name": "Extruded Diameter Mismatch",
+                "type": "Observation",
+                "description": "The diameter of the filament extruded in mid-air appears inconsistent or does not match the expected nozzle diameter."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "target": {
+                "name": "Extruder Clicking/Skipping",
+                "type": "Observation",
+                "description": "Audible clicking or thumping sounds from the extruder motor, indicating it is struggling and failing to push filament consistently, often due to excessive resistance."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Nozzle Blockage (Complete)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is entirely prevented."
+            },
+            "target": {
+                "name": "No Extrusion",
+                "type": "Observation",
+                "description": "No filament is extruded from the nozzle despite the extruder motor attempting to push filament."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Nozzle Blockage (Complete)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is entirely prevented."
+            },
+            "target": {
+                "name": "Extruder Clicking/Skipping",
+                "type": "Observation",
+                "description": "Audible clicking or thumping sounds from the extruder motor, indicating it is struggling and failing to push filament consistently, often due to excessive resistance."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "First Layer Rounded/Rope-like",
+                "type": "Observation",
+                "description": "The initial layer's extruded lines are rounded on top, resembling ropes, instead of being squished flat against the bed."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "Gaps Between First Layer Lines",
+                "type": "Observation",
+                "description": "Noticeable spaces exist between adjacent lines on the first layer because they are not squished together sufficiently."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "Printed Lines Thin (Insufficient Squish)",
+                "type": "Observation",
+                "description": "Extruded lines appear narrow or do not merge properly side-by-side due to insufficient squish from the nozzle being too far."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "Print Warping/Detaching",
+                "type": "Observation",
+                "description": "The print lifts off the print bed at the corners or edges, or detaches completely during the printing process, often due to poor first layer adhesion or thermal stress."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "target": {
+                "name": "Poor Inter-Layer Adhesion/Gaps",
+                "type": "Observation",
+                "description": "Layers above the first do not bond well together, potentially showing gaps between them or being easily separated."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Contaminated Print Surface",
+                "type": "FailureMode",
+                "description": "The print bed surface is dirty (e.g., dust, oil, fingerprints), preventing proper filament adhesion."
+            },
+            "target": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Bed Leveling",
+                "type": "FailureMode",
+                "description": "The print bed is not uniformly level or trammed relative to the nozzle's travel plane, causing inconsistent first layer height."
+            },
+            "target": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Bed Temperature",
+                "type": "FailureMode",
+                "description": "The print bed temperature is set incorrectly (too low or too high) for the specific filament type, negatively affecting first layer adhesion."
+            },
+            "target": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            }
+        },
+        {
+            "type": "CAUSES",
+            "source": {
+                "name": "Incorrect Bed Temperature",
+                "type": "FailureMode",
+                "description": "The print bed temperature is set incorrectly (too low or too high) for the specific filament type, negatively affecting first layer adhesion."
+            },
+            "target": {
+                "name": "Print Warping/Detaching",
+                "type": "Observation",
+                "description": "The print lifts off the print bed at the corners or edges, or detaches completely during the printing process, often due to poor first layer adhesion or thermal stress."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "First Layer Transparent/Thin",
+                "type": "Observation",
+                "description": "The initial layer of the print is see-through or significantly thinner than expected due to excessive squish."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text states that a transparent or extremely thin first layer is a symptom of the nozzle being too close.",
+                "when_false_rationale": "The absence of a transparent/thin first layer makes 'nozzle too close' less likely, but other symptoms like 'no extrusion' could still indicate it, according to the text."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Extrusion Too Wide",
+                "type": "Observation",
+                "description": "Deposited plastic lines on the first layer are significantly wider than the configured extrusion width, spreading out excessively."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text lists excessively wide extrusion as a symptom of the nozzle being too close.",
+                "when_false_rationale": "If the extrusion width is normal, it makes 'nozzle too close' less likely based on the symptoms described in the text, although other symptoms might still be present."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Nozzle Scratching Sound",
+                "type": "Observation",
+                "description": "An audible scratching noise occurs as the nozzle travels across the print bed or previous layers, indicating it is too close."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "inconclusive",
+                "when_true_rationale": "The text mentions that a scratching sound may occur when the nozzle is too close.",
+                "when_false_rationale": "The text indicates scratching 'may' occur, so its absence does not rule out or strongly argue against the nozzle being too close."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Inter-Layer Adhesion/Gaps",
+                "type": "Observation",
+                "description": "Layers above the first do not bond well together, potentially showing gaps between them or being easily separated."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too Low)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too low, causing the nozzle to be too close to the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text states that poor adhesion or gaps in subsequent layers can result from the nozzle being too close.",
+                "when_false_rationale": "Good inter-layer adhesion makes 'nozzle too close' less likely according to the text, but first-layer specific symptoms could still indicate the issue."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Curved/Inconsistent Extrusion",
+                "type": "Observation",
+                "description": "Filament extruded freely in mid-air comes out crooked, curled, or unevenly instead of falling straight down, often indicating a partial blockage."
+            },
+            "target": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text suggests checking for curved or inconsistent extrusion as an indicator of a blocked nozzle.",
+                "when_false_rationale": "Straight extrusion suggests the nozzle is not partially blocked, according to the diagnostic check described in the text."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Extruded Diameter Mismatch",
+                "type": "Observation",
+                "description": "The diameter of the filament extruded in mid-air appears inconsistent or does not match the expected nozzle diameter."
+            },
+            "target": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text implies checking if the extruded diameter matches the nozzle size is a way to diagnose blockage, suggesting a mismatch indicates a (partial) blockage.",
+                "when_false_rationale": "If the extruded diameter matches the nozzle size, it suggests the nozzle is likely not partially blocked, based on the diagnostic check described."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Extruder Clicking/Skipping",
+                "type": "Observation",
+                "description": "Audible clicking or thumping sounds from the extruder motor, indicating it is struggling and failing to push filament consistently, often due to excessive resistance."
+            },
+            "target": {
+                "name": "Nozzle Blockage (Partial)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is restricted but not completely stopped, often caused by debris or heat creep."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "inconclusive",
+                "when_true_rationale": "The text lists extruder clicking/skipping as an indicator ('Listen for clicking sounds') of a blocked nozzle causing resistance.",
+                "when_false_rationale": "The absence of clicking doesn't rule out a partial blockage according to the text, as a minor blockage might not cause enough resistance to make the extruder skip."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Extruder Clicking/Skipping",
+                "type": "Observation",
+                "description": "Audible clicking or thumping sounds from the extruder motor, indicating it is struggling and failing to push filament consistently, often due to excessive resistance."
+            },
+            "target": {
+                "name": "Nozzle Blockage (Complete)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is entirely prevented."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text links extruder clicking/skipping to nozzle blockage in general ('Listen for clicking sounds'), which includes complete blockage causing high resistance.",
+                "when_false_rationale": "The absence of clicking/skipping suggests less resistance, making a complete blockage less likely according to the text, although not impossible."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "No Extrusion",
+                "type": "Observation",
+                "description": "No filament is extruded from the nozzle despite the extruder motor attempting to push filament."
+            },
+            "target": {
+                "name": "Nozzle Blockage (Complete)",
+                "type": "FailureMode",
+                "description": "Flow of filament through the nozzle is entirely prevented."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "rules_out",
+                "when_true_rationale": "No extrusion is a primary symptom of a complete nozzle blockage, although the text also mentions it can occur in extreme cases of the nozzle being too close ('In extreme cases, no plastic will come out at all').",
+                "when_false_rationale": "If any filament is extruding, the nozzle cannot be completely blocked, based on the definition of complete blockage."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "First Layer Rounded/Rope-like",
+                "type": "Observation",
+                "description": "The initial layer's extruded lines are rounded on top, resembling ropes, instead of being squished flat against the bed."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text states that a rounded or rope-like first layer is a symptom of the nozzle being too far from the bed.",
+                "when_false_rationale": "A flat first layer indicates sufficient squish, suggesting the nozzle is not too high based on the description in the text."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text lists poor bed adhesion as a symptom when the nozzle is too far, but also lists other potential causes (contamination, leveling, temp).",
+                "when_false_rationale": "Good bed adhesion makes 'nozzle too high' less likely as a cause according to the text, but other symptoms like rounded lines could still indicate the issue."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Gaps Between First Layer Lines",
+                "type": "Observation",
+                "description": "Noticeable spaces exist between adjacent lines on the first layer because they are not squished together sufficiently."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text states that visible gaps between first layer lines are a symptom of the nozzle being too far.",
+                "when_false_rationale": "The absence of gaps makes 'nozzle too high' less likely based on the text, but lines could still be rounded without gaps."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Printed Lines Thin (Insufficient Squish)",
+                "type": "Observation",
+                "description": "Extruded lines appear narrow or do not merge properly side-by-side due to insufficient squish from the nozzle being too far."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text mentions that lines appearing thinner than expected is a symptom of the nozzle being too far.",
+                "when_false_rationale": "If printed lines are not thinner than expected, it suggests the nozzle is not too high, according to the symptoms listed in the text."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Print Warping/Detaching",
+                "type": "Observation",
+                "description": "The print lifts off the print bed at the corners or edges, or detaches completely during the printing process, often due to poor first layer adhesion or thermal stress."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "inconclusive",
+                "when_true_rationale": "The text lists print warping or detaching as a potential consequence ('may warp or detach') of the nozzle being too far, often due to poor adhesion.",
+                "when_false_rationale": "The absence of warping doesn't rule out the nozzle being too high according to the text, as other symptoms might exist or the print might not be prone to warping."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Inter-Layer Adhesion/Gaps",
+                "type": "Observation",
+                "description": "Layers above the first do not bond well together, potentially showing gaps between them or being easily separated."
+            },
+            "target": {
+                "name": "Incorrect Z-Offset (Too High)",
+                "type": "FailureMode",
+                "description": "The printer's Z-axis offset is calibrated too high, causing the nozzle to be too far from the print bed for the first layer."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text states that poor layer bonding in subsequent layers can result from the nozzle being too far.",
+                "when_false_rationale": "Good layer bonding makes 'nozzle too high' less likely based on the text, but first-layer specific symptoms could still indicate the issue."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            },
+            "target": {
+                "name": "Contaminated Print Surface",
+                "type": "FailureMode",
+                "description": "The print bed surface is dirty (e.g., dust, oil, fingerprints), preventing proper filament adhesion."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text implies cleaning the bed (Quick Fix 2) addresses adhesion issues, suggesting contamination can cause poor adhesion.",
+                "when_false_rationale": "Good bed adhesion suggests the print surface is likely not significantly contaminated, based on the implication in the text's quick fixes."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            },
+            "target": {
+                "name": "Incorrect Bed Leveling",
+                "type": "FailureMode",
+                "description": "The print bed is not uniformly level or trammed relative to the nozzle's travel plane, causing inconsistent first layer height."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text implies checking bed leveling (Quick Fix 3) addresses adhesion issues, suggesting incorrect leveling can cause poor adhesion.",
+                "when_false_rationale": "Good bed adhesion suggests the bed leveling is likely adequate, based on the implication in the text's quick fixes."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Poor Bed Adhesion",
+                "type": "Observation",
+                "description": "The first layer does not stick properly to the print surface, potentially detaching completely or being easily knocked loose."
+            },
+            "target": {
+                "name": "Incorrect Bed Temperature",
+                "type": "FailureMode",
+                "description": "The print bed temperature is set incorrectly (too low or too high) for the specific filament type, negatively affecting first layer adhesion."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "suggests_against",
+                "when_true_rationale": "The text implies verifying bed temperature (Quick Fix 4) addresses adhesion issues, suggesting incorrect temperature can cause poor adhesion.",
+                "when_false_rationale": "Good bed adhesion suggests the bed temperature is likely appropriate for the filament, based on the implication in the text's quick fixes."
+            }
+        },
+        {
+            "type": "EVIDENCE_FOR",
+            "source": {
+                "name": "Print Warping/Detaching",
+                "type": "Observation",
+                "description": "The print lifts off the print bed at the corners or edges, or detaches completely during the printing process, often due to poor first layer adhesion or thermal stress."
+            },
+            "target": {
+                "name": "Incorrect Bed Temperature",
+                "type": "FailureMode",
+                "description": "The print bed temperature is set incorrectly (too low or too high) for the specific filament type, negatively affecting first layer adhesion."
+            },
+            "properties": {
+                "when_true_strength": "suggests",
+                "when_false_strength": "inconclusive",
+                "when_true_rationale": "The text implies incorrect bed temperature can affect adhesion (Quick Fix 4) and the observation description mentions thermal stress, suggesting a link to warping/detaching.",
+                "when_false_rationale": "The absence of warping doesn't rule out incorrect bed temperature according to the text, as other factors influence warping and adhesion."
+            }
+        }
+    ]
+}

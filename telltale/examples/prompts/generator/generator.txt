@@ -1,0 +1,8 @@
+How to troubleshoot the generator screen not turning on while the main switch is on.
+- Battery voltage must be greater than 12.4V
+- Turn off the main switch and check the fuse.  If a fuse is blown replace it.
+- Make sure the GCU is good.
+- Make sure the main switch is good.  There should be continuity when the button is pressed.
+- No open or short circuits between the GCU and the main switch.
+How to test that the GCU is good: Make sure that pins 1, 3, and 5 are not connected.
+

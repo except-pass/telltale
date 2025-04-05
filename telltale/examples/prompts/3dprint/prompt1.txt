@@ -1,0 +1,28 @@
+When the nozzle is too close to the print bed:
+- The first layer appears transparent or extremely thin
+- The extruded plastic spreads out too wide, beyond the expected line width
+- You may hear a scratching sound as the nozzle moves
+- The nozzle can become partially blocked due to back pressure
+- Subsequent layers may have poor adhesion or gaps
+- In extreme cases, no plastic will come out at all
+
+To check if the nozzle is blocked:
+- Try to extrude filament in mid-air (use the LCD menu's extrude function)
+- Look for curved or inconsistent extrusion instead of straight lines
+- Check if the extruded filament diameter matches your nozzle size
+- Listen for clicking sounds from the extruder, indicating skipping
+
+When the nozzle is too far from the print bed:
+- The first layer appears rounded or rope-like instead of flat
+- Poor adhesion to the print bed, filament may not stick at all
+- Visible gaps between print lines
+- The printed lines appear thinner than expected
+- The print may warp or detach during printing
+- Subsequent layers will have poor layer bonding
+
+Quick fixes:
+1. Use Live Z adjustment during the first layer calibration
+2. Clean the print bed surface thoroughly
+3. Check if the print bed is properly leveled
+4. Verify the bed temperature is appropriate for your filament
+5. If persistent, recalibrate the First Layer Calibration in the printer's menu

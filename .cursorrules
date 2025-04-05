@@ -1,0 +1,12 @@
+Don't change the OpenAI model .env definition.  I've pasted it directly from OpenAI.  I'm using a model that's newer than your training cutoff date.
+Use uv for package management.  
+Use python's unittest for testing.
+When starting a new session, read the markdown files in the `specs` directory to understand the project.
+
+When I ask to save my work here's what I mean:
+ - If you created new files, make sure to git add them.
+ - look at the git diffs of all staged and not staged files. Do this in a way that doesnt block the terminal.
+ - do a git commit with a meaningful message.  
+ - show me a git status
+
+To interact with the neo4j database, use node_manager.py instead of writing cypher directly.

@@ -1,0 +1,3 @@
+Things to check when the screen is not turning on, even though the main switch is on.  If these checks fail, then the screen will not turn on.
+- Check the wire harness between the battery and main switch.   Pin 4 on the switch must go to pin 10 on the GCU. The battery terminal must be connected to pin 10 on the wire harness.
+- Check the wire harness between the GCU and ground for an open circuit.  Pins 1, 3, and 20 should go to ground.  

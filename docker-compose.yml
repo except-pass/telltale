@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  neo4j:
+    image: neo4j:5.9.0
+    ports:
+      - "7474:7474"  # Web interface
+      - "7687:7687"  # Bolt protocol
+    environment:
+      - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  telltale:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - neo4j
+    env_file:
+      - .env
+    command: sh -c "sleep 30 && telltale init-db && tail -f /dev/null"  # Initialize and then keep container running
+    volumes:
+      - .:/app
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8501:8501"  # Streamlit web UI
+    depends_on:
+      - neo4j
+      - telltale
+    env_file:
+      - .env
+    command: sh -c "sleep 35 && telltale ui --port 8501 --host 0.0.0.0"  # Run the Streamlit UI
+    volumes:
+      - .:/app
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins: 

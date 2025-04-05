@@ -50,3 +50,4 @@ htmlcov/
 package-lock.json
 uv.lock
 .cache
+todo

@@ -161,7 +161,3 @@ A user reports "No Music" when a device is turned on. Telltale will:
    - Ask about "Buzz or Hiss" (suggests Speaker Broken)
 
 3. Update recommendations as new observations are provided
-
-## License
-
-[Add your license here] 
